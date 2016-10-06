@@ -26,7 +26,7 @@ import pre  # Preprocess schedule file
 ###
 app = flask.Flask(__name__)
 import CONFIG
-
+baset = arrow.get('2016-09-26T00:00.01')    #Start of the first day of the term, can be scaled to fit the start of each week
 
 ###
 # Pages
@@ -58,9 +58,10 @@ def page_not_found(error):
 #################
 
 @app.template_filter( 'fmtdate' )
-def format_arrow_date( date ):
+def format_arrow_date(shift):
     try: 
-        normal = arrow.get( date )
+        normal = baset
+        normal.replace(days=+7*shift)
         return normal.format("ddd MM/DD/YYYY")
     except:
         return "(bad date)"
