@@ -68,6 +68,7 @@ def format_arrow_date(wk):
         return "(bad date)"
 
 app.jinja_env.globals.update(date=format_arrow_date)
+app.jinja_env.filters['date'] = format_arrow_date
 
 #############
 #    
