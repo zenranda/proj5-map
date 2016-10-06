@@ -58,7 +58,7 @@ def page_not_found(error):
 #################
 
 @app.template_filter( 'fmtdate' )
-def (wk):
+def format_arrow_date(wk):
     try:
         time = arrow.get(2016, 9, 20)
         time.replace(weeks=+wk)
