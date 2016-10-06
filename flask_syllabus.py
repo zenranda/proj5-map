@@ -58,7 +58,7 @@ def page_not_found(error):
 #################
 
 @app.template_filter( 'fmtdate' )
-def format_arrow_date(time = arrow.get(2016, 9, 27):
+def format_arrow_date(time = arrow.get(2016, 9, 27)):
     try:
         rez = time.format("ddd MM/DD/YYYY")
         return rez
