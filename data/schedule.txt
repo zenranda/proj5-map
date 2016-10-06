@@ -7,7 +7,7 @@
 #
 begin:  09/27/2016
 
-week: arrow.get(2016, 9, 27)
+week: 1
 
 topic: Course introduction.  Basic web (http) architecture.  Managing
 	a code base with distributed version control.  Basic Unix.
