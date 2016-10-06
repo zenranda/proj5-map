@@ -63,7 +63,7 @@ def format_arrow_date(wk):
         time = arrow.get(2016, 9, 20)
         time.replace(weeks=+wk)
         rez = time.format("ddd MM/DD/YYYY")
-        return wk + rez
+        return str(wk + rez)
     except:
         return "(bad date)"
 
