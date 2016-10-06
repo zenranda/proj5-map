@@ -58,11 +58,9 @@ def page_not_found(error):
 #################
 
 @app.template_filter( 'fmtdate' )
-def format_arrow_date():
-    global baset
+def format_arrow_date(time = arrow.get(2016, 9, 27):
     try:
-        rez = baset.format("ddd MM/DD/YYYY")
-        baset.replace(weeks=+1)
+        rez = time.format("ddd MM/DD/YYYY")
         return rez
     except:
         return "(bad date)"
