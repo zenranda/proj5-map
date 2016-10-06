@@ -67,6 +67,7 @@ def format_arrow_date():
     except:
         return "(bad date)"
 
+jinja_env.filters['date'] = format_arrow_date
 
 #############
 #    
