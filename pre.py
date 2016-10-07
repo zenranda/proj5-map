@@ -13,7 +13,7 @@ def process(raw):
     field = None
     entry = { }
     cooked = [ ]
-    thedate = arrow.uctnow()        #current date, for comparison
+    thedate = arrow.utcnow()        #current date, for comparison
     
     for line in raw:
         line = line.strip()
