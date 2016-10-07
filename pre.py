@@ -44,7 +44,7 @@ def process(raw):
                 entry = { }
             entry['topic'] = ""
             entry['project'] = ""
-            entry['week'] = content + base.format('MMMM DD, YYYY')
+            entry['week'] = "Week " + content + ": " + base.format('MMMM DD, YYYY')
             base = base.replace(weeks=+1)
             
         elif field == 'topic' or field == 'project':
