@@ -42,14 +42,14 @@ def process(raw):
             entry['topic'] = ""
             entry['project'] = ""
             entry['week'] = content + base.format('MMMM DD, YYYY')
-            base.replace(days=+7)
             
         elif field == 'topic' or field == 'project':
             entry[field] = content
 
         else:
             raise ValueError("Syntax error in line: {}".format(line))
-
+        
+        base.replace(weeks=+1)
     if entry:
         cooked.append(entry)
 
