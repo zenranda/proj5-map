@@ -3,7 +3,7 @@ Test program for pre-processing schedule
 """
 import arrow
 
-base = arrow.get(2016, 9, 27)
+base = arrow.get(2016, 9, 20)
 
 def process(raw):
     """
@@ -39,11 +39,11 @@ def process(raw):
 
         elif field == "week":
             if entry:
-                cooked.append(entry + base)
+                cooked.append(entry)
                 entry = { }
             entry['topic'] = ""
             entry['project'] = ""
-            entry['week'] = content
+            entry['week'] = str(content + base)
 
         elif field == 'topic' or field == 'project':
             entry[field] = content
