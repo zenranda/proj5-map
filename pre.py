@@ -47,15 +47,12 @@ def process(raw):
             
             if (base < thedate):                        #if the date range of a week is within the date range of our current week
                 if (base.replace(weeks=+1) > thedate):
-                    entry['current'] = True
-                    
+                    entry['current'] = True                    
             else:
                 entry['current'] = False
             
             base = base.replace(weeks=+1)                                           #shifts the date by one week
-            
-            if
-            
+                        
         elif field == 'topic' or field == 'project':
             entry[field] = content
 
