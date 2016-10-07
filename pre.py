@@ -3,8 +3,6 @@ Test program for pre-processing schedule
 """
 import arrow
 
-base = 0
-
 def process(raw):
     """
     Line by line processing of syllabus file.  Each line that needs
@@ -12,10 +10,11 @@ def process(raw):
     may be continued if they don't contain ':'.  If # is the first
     non-blank character on a line, it is a comment ad skipped. 
     """
-    global base
     field = None
     entry = { }
-    cooked = [ ] 
+    cooked = [ ]
+    thedate = arrow.uctnow()        #current date, for comparison
+    
     for line in raw:
         line = line.strip()
         if len(line) == 0 or line[0]=="#" :
@@ -44,8 +43,18 @@ def process(raw):
                 entry = { }
             entry['topic'] = ""
             entry['project'] = ""
-            entry['week'] = "Week " + content + ": " + base.format('MMMM DD, YYYY')
-            base = base.replace(weeks=+1)
+            entry['week'] = "Week " + content + ": " + base.format('MMMM DD, YYYY') #displays the date
+            
+            if (base < thedate):                        #if the date range of a week is within the date range of our current week
+                if (base.replace(weeks=+1) > thedate):
+                    entry['current'] = True
+                    
+            else:
+                entry['current'] = False
+            
+            base = base.replace(weeks=+1)                                           #shifts the date by one week
+            
+            if
             
         elif field == 'topic' or field == 'project':
             entry[field] = content

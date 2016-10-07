@@ -57,16 +57,13 @@ def page_not_found(error):
 #################
 
 @app.template_filter( 'fmtdate' )
-def format_arrow_date(wk):
-    try:
-        time = arrow.get(2016, 9, 20)
-        time.replace(weeks=+wk)
-        rez = time.format("ddd MM/DD/YYYY")
-        return rez
+def format_arrow_date( date ):
+    try: 
+        normal = arrow.get( date )
+        return normal.format("ddd MM/DD/YYYY")
     except:
         return "(bad date)"
 
-app.jinja_env.globals.update(date=format_arrow_date)
 app.jinja_env.filters['date'] = format_arrow_date
 
 #############
