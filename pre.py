@@ -38,13 +38,12 @@ def process(raw):
         elif field == "week":
             if entry:
                 cooked.append(entry)
-                cooked.append(base)
                 entry = { }
-                base.replace(weeks=+1)
             entry['topic'] = ""
             entry['project'] = ""
-            entry['week'] = str(content)
-
+            entry['week'] = str(content + base)
+            base.replace(weeks=+1)
+            
         elif field == 'topic' or field == 'project':
             entry[field] = content
 
