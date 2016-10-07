@@ -43,7 +43,7 @@ def process(raw):
                 entry = { }
             entry['topic'] = ""
             entry['project'] = ""
-            entry['week'] = str(content + base)
+            entry['week'] = str(content)
 
         elif field == 'topic' or field == 'project':
             entry[field] = content
