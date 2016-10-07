@@ -26,7 +26,6 @@ import pre  # Preprocess schedule file
 ###
 app = flask.Flask(__name__)
 import CONFIG
-baset = arrow.get(2016, 9, 27)    #Start of the first day, can be scaled to fit the start of each week
 
 ###
 # Pages
@@ -63,7 +62,7 @@ def format_arrow_date(wk):
         time = arrow.get(2016, 9, 20)
         time.replace(weeks=+wk)
         rez = time.format("ddd MM/DD/YYYY")
-        return str(wk + rez)
+        return rez
     except:
         return "(bad date)"
 

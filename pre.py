@@ -3,8 +3,6 @@ Test program for pre-processing schedule
 """
 import arrow
 
-base = arrow.get(2016, 9, 20)
-
 def process(raw):
     """
     Line by line processing of syllabus file.  Each line that needs
@@ -33,14 +31,16 @@ def process(raw):
         if field == "begin":
             try:
                 base = arrow.get(content, "MM/DD/YYYY")
-                # print("Base date {}".format(base.isoformat()))
+                print("Base date {}".format(base.isoformat()))
             except:
                 raise ValueError("Unable to parse date {}".format(content))
 
         elif field == "week":
             if entry:
                 cooked.append(entry)
+                cooked.append(base)
                 entry = { }
+                base.replace(weeks=+1)
             entry['topic'] = ""
             entry['project'] = ""
             entry['week'] = str(content)
