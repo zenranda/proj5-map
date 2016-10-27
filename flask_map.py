@@ -11,10 +11,6 @@ import arrow # Replacement for datetime, based on moment.js
 import datetime # But we still need time
 from dateutil import tz  # For interpreting local times
 
-# Our own module
-import pre  # Preprocess schedule file
-
-
 ###
 # Globals
 ###
