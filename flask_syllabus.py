@@ -27,21 +27,20 @@ import pre  # Preprocess schedule file
 app = flask.Flask(__name__)
 import CONFIG
 
+
 ###
 # Pages
 ###
 
 @app.route("/")
 @app.route("/index")
-@app.route("/schedule")
+@app.route("/map")
 def index():
   app.logger.debug("Main page entry")
-  if 'schedule' not in flask.session:
-      app.logger.debug("Processing raw schedule file")
-      raw = open(CONFIG.schedule)
-      flask.session['schedule'] = pre.process(raw)
+  if 'map' not in flask.session:
+      app.logger.debug("Sending map file")
 
-  return flask.render_template('syllabus.html')
+  return flask.render_template('map.html')
 
 
 @app.errorhandler(404)
@@ -49,22 +48,6 @@ def page_not_found(error):
     app.logger.debug("Page not found")
     flask.session['linkback'] =  flask.url_for("index")
     return flask.render_template('page_not_found.html'), 404
-
-#################
-#
-# Functions used within the templates
-#
-#################
-
-@app.template_filter( 'fmtdate' )
-def format_arrow_date( date ):
-    try: 
-        normal = arrow.get( date )
-        return normal.format("ddd MM/DD/YYYY")
-    except:
-        return "(bad date)"
-
-app.jinja_env.filters['date'] = format_arrow_date
 
 #############
 #    
