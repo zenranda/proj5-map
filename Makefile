@@ -10,7 +10,7 @@
 #  'make configure' may also work, but with error
 #   messages.
 
-SOURCES = flask_syllabus.py
+SOURCES = flask_map.py
 
 Makefile.local: 
 	bash ./configure
