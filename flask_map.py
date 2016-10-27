@@ -1,9 +1,3 @@
-"""
-Very simple Flask web site, with one page
-displaying a course schedule.
-
-"""
-
 import flask
 from flask import render_template
 from flask import request
