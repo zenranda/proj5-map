@@ -6,11 +6,6 @@ from flask import url_for
 import json
 import logging
 
-# Date handling 
-import arrow # Replacement for datetime, based on moment.js
-import datetime # But we still need time
-from dateutil import tz  # For interpreting local times
-
 ###
 # Globals
 ###
@@ -38,6 +33,7 @@ def page_not_found(error):
     app.logger.debug("Page not found")
     flask.session['linkback'] =  flask.url_for("index")
     return flask.render_template('page_not_found.html'), 404
+
 
 #############
 #    
