@@ -1,4 +1,4 @@
-Falling Sky Brewing House|44.045223 |-123.092045
+Falling Sky Brewing House|44.045223|-123.092045
 Glenwood Restaurant|44.045028|-123.080371
 Jordan Schnitzer Museum of Art|44.044469|-123.076981
 The Bier Stein|44.042334|-123.092589
