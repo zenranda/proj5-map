@@ -9,7 +9,7 @@ The fifth project in CS322. An interactive map using an outside API, in this cas
 
 Also, clicking on the map where there's no pointer will create one. Clicking on the newly created pointer will display its latitude and longitude. Note that although this map focuses on Eugene, it can get map data for the rest of the world. The user can scroll at their lesiure.
 
-Requires an access token from MapBox in order to get map data - this program is currently configured to read one from a file called SECRETS.txt in its directory. If you don't have a SECRETS.txt file in your directory, or if it doesn't contain a valid MapBox access token, this program will not work. If you wish to add your own SECRETS.txt, the syntax is just the access token in the text, no extra characters or spaces.
+Requires an access token from MapBox in order to get map data - this program is currently configured to read one from a file called SECRETS.py in its directory. If you don't have a SECRETS.py file in your directory, or if it doesn't contain a valid MapBox access token, this program will not work. If you wish to add your own SECRETS.py, the syntax is just the access token in the text, no extra characters or spaces or commands. It's more of a text file than a python file.
 
 ### USAGE ###
 
