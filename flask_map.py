@@ -24,7 +24,29 @@ def index():
   app.logger.debug("Main page entry")
   if 'map' not in flask.session:
       app.logger.debug("Sending map file")
-
+      
+      
+  app.logger.debug("Sending keys...")
+  with open('SECRETS.txt') as key:      #sends access token to the page
+    ent = ""                            #in theory, sensitive information
+    for line in key:
+        while ent == "":
+            ent = line
+    flask.session['confidental'] = ent
+  
+  
+  app.logger.debug("Sending loc data...")
+  with open('POI.txt') as points:
+    data = []                       #reads the list of points
+    for line in points:             
+        item = []
+        line = line.strip()
+        k = line.split("|")
+        item.append(k[0])        #puts each part of the point (name, lat, long) into a list
+        item.append(k[1])
+        item.append(k[2])
+        data.append(item)        #adds the list with the data to another list
+    flask.session['points'] = data  #sends that list to jinja
   return flask.render_template('map.html')
 
 
