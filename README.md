@@ -5,7 +5,9 @@
 
 ##Project Notes
 
-The fifth project in CS322. An interactive map using an outside API, in this case Leaflet. Functionality is very basic; it centers on the Eugene, Oregon area and populates it with pins on 4 locations of interest. The locations are read from an separate POI.txt file, for modularity and ease of modification. It's easy to add new locations of interest to be added if you modify POI.txt - though be wary of the syntax; it's NAME|LATITUDE|LONGITUDE, and each entry has its own line.
+The fifth project in CS322. An interactive map using an outside API, in this case Leaflet. Functionality is very basic; it centers on the Eugene, Oregon area and populates it with pins on 4 locations of interest. Clicking on a pin will display its name. The locations are read from an separate POI.txt file, for modularity and ease of modification. It's easy to add new locations of interest to be added if you modify POI.txt - though be wary of the syntax; it's NAME|LATITUDE|LONGITUDE, and each entry has its own line.
+
+Also, clicking on the map where there's no pointer will create one. Clicking on the newly created pointer will display its latitude and longitude. Note that although this map focuses on Eugene, it can get map data for the rest of the world. The user can scroll at their lesiure.
 
 Requires an access token from MapBox in order to get map data - this program is currently configured to read one from a file called SECRETS.txt in its directory. If you don't have a SECRETS.txt file in your directory, or if it doesn't contain a valid MapBox access token, this program will not work. If you wish to add your own SECRETS.txt, the syntax is just the access token in the text, no extra characters or spaces.
 
