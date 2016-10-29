@@ -27,7 +27,7 @@ def index():
       
       
   app.logger.debug("Sending keys...")
-  with open('SECRETS.txt') as key:      #sends access token to the page
+  with open('SECRETS.py') as key:      #sends access token to the page
     ent = ""                            #in theory, sensitive information
     for line in key:
         while ent == "":
